@@ -1,0 +1,53 @@
+import sqlite3 as sq
+
+con=sq.connect("D:/23BCA295/sqlite2/database/contect.db")
+
+c=con.cursor()
+
+c.execute("create table if not exists contect(fname,lname,contact,email,city)")
+<sqlite3.Cursor at 0x2511310>
+
+c.execute("insert into contect values('ammar','tai',2255886644,'ammar123@gmail.com','portugal'),
+                                     ('aadil','hafeji',1313131331,'aadil@gmail.com','rome'),
+                                     ('parth','patel','2525252255','parth@gmail.com','lisbon'),
+                                     ('jeet','patel',131232132,'jeet@gmail.com','birlin'),
+                                     ('jenish','patel',213546546,'jenish@gmail.com','poland'),
+                                     ('harsh','patel',1231231123,'jenish@gmail.com','mumbai'),
+                                     ('raj','patel',21321321,'raj@gmail.com','surat'),
+                                     ('om','patel',55751054895,'om@gmail.com','bardoli')")
+
+c.execute(" CREATE TABLE logtable 
+            ( operation_name VARCHAR(50),
+            datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP, fname VARCHAR(50), 
+            lname VARCHAR(50),contact VARCHAR(20),old_contact VARCHAR(20),
+            new_contact VARCHAR(20) ")
+<sqlite3.Cursor at 0x2511310>
+
+c.executemany('''INSERT INTO contect (fname, lname, contact, email, city)VALUES (?, ?, ?, ?, ?)''', records)
+<sqlite3.Cursor at 0x2511310>
+
+c.execute('''
+            create trigger if not exists check_trigger
+            BEFORE DELETE ON contect
+            FOR EACH ROW
+            WHEN OLD.fname = 'aadil'
+            BEGIN
+       DELETE FROM contact WHERE fname = 'aadil';
+END;
+''')
+c.execute(" DELETE FROM contact WHERE fname = 'aadil' AND lname = 'hafeji'")
+
+c.execute('SELECT * FROM contect')
+<sqlite3.Cursor at 0x2511310>
+
+rows = c.fetchall()
+for row in rows:
+    print(row)
+('ammar', 'tai', 2255886644, 'ammar123@gmail.com', 'portugal')
+('aadil', 'hafeji', 1313131331, 'aadil@gmail.com', 'rome')
+('parth', 'patel', '2525252255', 'parth@gmail.com', 'lisbon')
+('jeet', 'patel', 131232132, 'jeet@gmail.com', 'birlin')
+('jenish', 'patel', 213546546, 'jenish@gmail.com', 'poland')
+('harsh', 'patel', 1231231123, 'jenish@gmail.com', 'mumbai')
+('raj', 'patel', 21321321, 'raj@gmail.com', 'surat')
+('om', 'patel', 55751054895, 'om@gmail.com', 'bardoli')
