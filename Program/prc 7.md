@@ -98,7 +98,7 @@ END;
 
 
 ```python
-c.execute(" DELETE FROM contect WHERE fname = 'aadil' AND lname = 'hafeji'")
+c.execute(" DELETE FROM contact WHERE fname = 'aadil' AND lname = 'hafeji'")
 ```
 
 
@@ -110,7 +110,7 @@ c.execute(" DELETE FROM contect WHERE fname = 'aadil' AND lname = 'hafeji'")
 
 
 ```python
-c.execute('SELECT * FROM contect')
+c.execute('SELECT * FROM contact')
 ```
 
 
