@@ -80,7 +80,7 @@ c.executemany('''INSERT INTO contact (fname, lname, contact, email, city)VALUES 
 
 ```python
 c.execute(''' create trigger if not exists check_trigger
-            BEFORE DELETE ON contect
+            BEFORE DELETE ON contact
             FOR EACH ROW
             WHEN OLD.fname = 'aadil'
             BEGIN
