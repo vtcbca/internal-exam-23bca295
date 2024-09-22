@@ -128,7 +128,6 @@ for row in rows:
 ```
 
     ('ammar', 'tai', 2255886644, 'ammar123@gmail.com', 'portugal')
-    ('aadil', 'hafeji', 1313131331, 'aadil@gmail.com', 'rome')
     ('parth', 'patel', '2525252255', 'parth@gmail.com', 'lisbon')
     ('jeet', 'patel', 131232132, 'jeet@gmail.com', 'birlin')
     ('jenish', 'patel', 213546546, 'jenish@gmail.com', 'poland')
