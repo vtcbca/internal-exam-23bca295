@@ -65,7 +65,7 @@ c.execute(" CREATE TABLE logtable1 ( operation_name VARCHAR(50),datetime TIMESTA
 
 
 ```python
-c.executemany('''INSERT INTO contect (fname, lname, contact, email, city)VALUES (?, ?, ?, ?, ?)''', records)
+c.executemany('''INSERT INTO contact (fname, lname, contact, email, city)VALUES (?, ?, ?, ?, ?)''', records)
 ```
 
 
